@@ -28,40 +28,24 @@ class _GridState extends State<Grid> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(children:
-        [ExpandedRow(),
-          buildRow_flex(),
+        body: Column
+          (children:
+        [
+          ExpandedRow(),
+          ExpandedRow2(),
+          ExpandedRow3(),
+          ExpandedRow4(),
         ]));
   }
-}
-
-Row buildRow_flex() {
-  return Row(children: [
-    Flexible(
-        flex: 1,
-        child:Container(
-
-          height: 100,
-          color: Colors.blue,
-        ))
-    ,
-    Flexible(
-        child: Container(
-          height: 100,
-          color: Colors.green,
-        )),
-    Flexible(
-      child:Container(
-        height: 100,
-        color: Colors.red,
-      ),)]);
 }
 
 Row ExpandedRow() {
   return Row(
     children: [
-      Container(
-        child: OutlinedButton(onPressed: () {  }, child: Text("1"),
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text("1"),
         ),
       ),
       Expanded(
@@ -75,14 +59,104 @@ Row ExpandedRow() {
           onPressed: () {},
           child: Text("3"),
         ),
-      )
+      ),
+      Expanded(child: OutlinedButton(onPressed: () {  }, child: Text("+"),))
+    ],
+  );
+}
+
+Row ExpandedRow2() {
+  return Row(
+    children: [
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text("4"),
+        ),
+      ),
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text("5"),
+        ),
+      ),
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text("6"),
+        ),
+      ),
+      Expanded(
+          child: OutlinedButton(
+        onPressed: () {},
+        child: Text("-"),
+      ))
+    ],
+  );
+}
+
+Row ExpandedRow3() {
+  return Row(
+    children: [
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text("7"),
+        ),
+      ),
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text("8"),
+        ),
+      ),
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text("9"),
+        ),
+      ),
+      Expanded(
+          child: OutlinedButton(
+            onPressed: () {},
+            child: Text("/"),
+          ))
+    ],
+  );
+}
+
+Row ExpandedRow4() {
+  return Row(
+    children: [
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text("UNDO"),
+        ),
+      ),
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text(","),
+        ),
+      ),
+      Expanded(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text("0"),
+        ),
+      ),
+      Expanded(
+          child: OutlinedButton(
+            onPressed: () {},
+            child: Text("*"),
+          ))
     ],
   );
 }
 
 class Header extends StatefulWidget {
   const Header({super.key});
-
 
   @override
   State<Header> createState() => HeaderWidget();
@@ -118,12 +192,18 @@ List<num> stack = [];
                    ),
                   alignment: Alignment.center,
                   child: Text("[10.0][40.5][20.1]"),
-                )
+                ),
+                ExpandedRow(),
+                ExpandedRow2(),
+                ExpandedRow3(),
+                ExpandedRow4(),
               ],
             ),
-          ))
-        ], 
+          ),)
+
+        ],
       ),
+
     );
   }
 }
