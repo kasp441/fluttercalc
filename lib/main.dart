@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttercalc/Display.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      home: Grid()
+      home: Header()
     );
   }
 }
@@ -39,6 +40,7 @@ Row buildRow_flex() {
     Flexible(
         flex: 1,
         child:Container(
+
           height: 100,
           color: Colors.blue,
         ))
@@ -76,6 +78,54 @@ Row ExpandedRow() {
       )
     ],
   );
+}
+
+class Header extends StatefulWidget {
+  const Header({super.key});
+
+
+  @override
+  State<Header> createState() => HeaderWidget();
+}
+
+class HeaderWidget extends State<Header> {
+var input = Display().getTextAsText();
+List<num> stack = [];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: <Widget> 
+        [
+          Expanded(child: Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget> [
+                Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black)
+                  ),
+                  alignment: Alignment.center,
+                  child: Text("420"),
+                ),
+                Container(
+                  padding: EdgeInsets.all(10),
+                   decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black)
+                   ),
+                  alignment: Alignment.center,
+                  child: Text("[10.0][40.5][20.1]"),
+                )
+              ],
+            ),
+          ))
+        ], 
+      ),
+    );
+  }
 }
 
 
