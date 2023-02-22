@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercalc/Display.dart';
+import 'package:fluttercalc/operators/Add.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,23 +45,23 @@ Row ExpandedRow() {
     children: [
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText("1");},
           child: Text("1"),
         ),
       ),
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText("2");},
           child: Text("2"),
         ),
       ),
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText("3");},
           child: Text("3"),
         ),
       ),
-      Expanded(child: OutlinedButton(onPressed: () {  }, child: Text("+"),))
+      Expanded(child: OutlinedButton(onPressed: () {}, child: Text("+"),))
     ],
   );
 }
@@ -70,19 +71,19 @@ Row ExpandedRow2() {
     children: [
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText("4");},
           child: Text("4"),
         ),
       ),
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText("5");},
           child: Text("5"),
         ),
       ),
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText("6");},
           child: Text("6"),
         ),
       ),
@@ -100,19 +101,19 @@ Row ExpandedRow3() {
     children: [
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText("7");},
           child: Text("7"),
         ),
       ),
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText("8");},
           child: Text("8"),
         ),
       ),
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText("9");},
           child: Text("9"),
         ),
       ),
@@ -136,13 +137,13 @@ Row ExpandedRow4() {
       ),
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText(".");},
           child: Text(","),
         ),
       ),
       Expanded(
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Display().addToText("0");},
           child: Text("0"),
         ),
       ),
@@ -183,7 +184,7 @@ List<num> stack = [];
                     border: Border.all(color: Colors.black)
                   ),
                   alignment: Alignment.center,
-                  child: Text("420"),
+                  child: Text(input),
                 ),
                 Container(
                   padding: EdgeInsets.all(10),
@@ -191,7 +192,13 @@ List<num> stack = [];
                     border: Border.all(color: Colors.black)
                    ),
                   alignment: Alignment.center,
-                  child: Text("[10.0][40.5][20.1]"),
+                  child: Text(stack.toString()),
+                ),
+                Container(
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    child: Text("ENTER"),
+                  ),
                 ),
                 ExpandedRow(),
                 ExpandedRow2(),
