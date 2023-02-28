@@ -16,44 +16,52 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text("RPN Calculator")),
-        ),
-        body: Column(
-          children: [
-            Container(
-              height: 40,
-              color: Colors.white,
-            ),
-            Expanded
-              (
-                flex: 2,
-                child: Container(width: double.infinity,
-            child: Header(),
-            ),
-            ),
-
-        Expanded
-          (
-          flex: 3,
-          child: Container(width: double.infinity,
-            child: Grid(),
-          ), )],
-        ),
-      )
+      home: MainScreen()
     );
   }
 }
 
+class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
 
-class Grid extends StatefulWidget {
-  const Grid({Key? key}) : super(key: key);
   @override
-  State<Grid> createState() => _GridState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _GridState extends State<Grid> {
+class _MainScreenState extends State<MainScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+          appBar: AppBar(
+            title: Center(child: Text("RPN Calculator")),
+          ),
+          body: Column(
+            children: [
+              Container(
+                height: 40,
+                color: Colors.white,
+              ),
+              Expanded
+                (
+                flex: 2,
+                child: Container(width: double.infinity,
+                  child: Header(),
+                ),
+              ),
+
+              Expanded
+                (
+                flex: 3,
+                child: Container(width: double.infinity,
+                  child: Grid(),
+                ), )],
+          ),
+        );
+  }
+}
+
+
+class Grid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -243,14 +251,7 @@ class _GridState extends State<Grid> {
   }
 }
 
-class Header extends StatefulWidget {
-  const Header({super.key});
-
-  @override
-  State<Header> createState() => HeaderWidget();
-}
-
-class HeaderWidget extends State<Header> {
+class Header extends StatelessWidget {
 var input = Display().getTextAsText();
 List<num> stack = [];
 
