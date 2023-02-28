@@ -60,185 +60,186 @@ class _GridState extends State<Grid> {
         body: Column
           (children:
         [
-          ExpandedRow(),
-          ExpandedRow2(),
-          ExpandedRow3(),
-          ExpandedRow4(),
-        ]));
-  }
-}
-
-Padding ExpandedRow() {
-  return Padding(
-    padding: EdgeInsets.all(padding),
-    child: Row(
-      children: [
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {
-              Display().addToText("1");
-            },
-            child: Text("1", style: TextStyle(fontSize: font),),
-          ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {
-              Display().addToText("2");
-            },
-            child: Text("2", style: TextStyle(fontSize: font),),
-          ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {
-              Display().addToText("3");
-            },
-            child: Text("3", style: TextStyle(fontSize: font),),
-          ),
-        ),
-        SizedBox(
+          Padding(
+        padding: EdgeInsets.all(padding),
+      child: Row(
+        children: [
+          SizedBox(
             width: width,
             height: height,
             child: OutlinedButton(
-              onPressed: () {},
-              child: Text("+", style: TextStyle(fontSize: font),),
-            ))
-      ],
-    ),
-  );
-}
+              onPressed: () {
+                Display().addToText("1");
+              },
+              child: Text("1", style: TextStyle(fontSize: font),),
+            ),
+          ),
+          SizedBox(
+            width: width,
+            height: height,
+            child: OutlinedButton(
+              onPressed: () {
+                Display().addToText("2");
+              },
+              child: Text("2", style: TextStyle(fontSize: font),),
+            ),
 
-Padding ExpandedRow2() {
-  return Padding(
-    padding:  EdgeInsets.all(padding),
-    child: Row(
-      children: [
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {Display().addToText("4");},
-            child: Text("4", style: TextStyle(fontSize: font),),
           ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {Display().addToText("5");},
-            child: Text("5", style: TextStyle(fontSize: font),),
+          SizedBox(
+            width: width,
+            height: height,
+            child: OutlinedButton(
+              onPressed: () {
+                Display().addToText("3");
+              },
+              child: Text("3", style: TextStyle(fontSize: font),),
+            ),
           ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {Display().addToText("6");},
-            child: Text("6", style: TextStyle(fontSize: font),),
-          ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {},
-            child: Text("-", style: TextStyle(fontSize: font),),
-          ),
-        )
-      ],
+          SizedBox(
+              width: width,
+              height: height,
+              child: OutlinedButton(
+                onPressed: () {},
+                child: Text("+", style: TextStyle(fontSize: font),),
+              ))
+        ],
+      ),
     ),
-  );
-}
-
-Padding ExpandedRow3() {
-  return Padding(
-    padding:  EdgeInsets.all(padding),
-    child: Row(
-      children: [
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {Display().addToText("7");},
-            child: Text("7", style: TextStyle(fontSize: font),),
+          Padding(
+            padding: EdgeInsets.all(padding),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Display().addToText("4");
+                    },
+                    child: Text("4", style: TextStyle(fontSize: font),),
+                  ),
+                ),
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Display().addToText("5");
+                    },
+                    child: Text("5", style: TextStyle(fontSize: font),),
+                  ),
+                ),
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Display().addToText("6");
+                    },
+                    child: Text("6", style: TextStyle(fontSize: font),),
+                  ),
+                ),
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    child: Text("-", style: TextStyle(fontSize: font),),
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {Display().addToText("8");},
-            child: Text("8", style: TextStyle(fontSize: font),),
+          Padding(
+            padding: EdgeInsets.all(padding),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Display().addToText("7");
+                    },
+                    child: Text("7", style: TextStyle(fontSize: font),),
+                  ),
+                ),
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Display().addToText("8");
+                    },
+                    child: Text("8", style: TextStyle(fontSize: font),),
+                  ),
+                ),
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Display().addToText("9");
+                    },
+                    child: Text("9", style: TextStyle(fontSize: font),),
+                  ),
+                ),
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    child: Text("/", style: TextStyle(fontSize: font),),
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {Display().addToText("9");},
-            child: Text("9", style: TextStyle(fontSize: font),),
+          Padding(
+            padding: EdgeInsets.all(padding),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    child: Text("UNDO", style: TextStyle(fontSize: 21),),
+                  ),
+                ),
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Display().addToText(".");
+                    },
+                    child: Text(",", style: TextStyle(fontSize: font),),
+                  ),
+                ),
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Display().addToText("0");
+                    },
+                    child: Text("0", style: TextStyle(fontSize: font),),
+                  ),
+                ),
+                SizedBox(
+                  width: width,
+                  height: height,
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    child: Text("*", style: TextStyle(fontSize: font),),
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {},
-            child: Text("/", style: TextStyle(fontSize: font),),
-          ),
-        )
-      ],
-    ),
-  );
-}
-
-Padding ExpandedRow4() {
-  return Padding(
-    padding:  EdgeInsets.all(padding),
-    child: Row(
-      children: [
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {},
-            child: Text("UNDO", style: TextStyle(fontSize: 21),),
-          ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {Display().addToText(".");},
-            child: Text(",", style: TextStyle(fontSize: font),),
-          ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {Display().addToText("0");},
-            child: Text("0", style: TextStyle(fontSize: font),),
-          ),
-        ),
-        SizedBox(
-          width: width,
-          height: height,
-          child: OutlinedButton(
-            onPressed: () {},
-            child: Text("*", style: TextStyle(fontSize: font),),
-          ),
-        )
-      ],
-    ),
-  );
+        ]));
+  }
 }
 
 class Header extends StatefulWidget {
