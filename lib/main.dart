@@ -71,6 +71,7 @@ class _GridState extends State<Grid> {
               onPressed: () {
                 Display().addToText("1");
               },
+
               child: Text("1", style: TextStyle(fontSize: font),),
             ),
           ),
