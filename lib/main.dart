@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercalc/Display.dart';
 import 'package:fluttercalc/operators/Add.dart';
+import 'package:fluttercalc/operators/Divide.dart';
+import 'package:fluttercalc/operators/Multiply.dart';
+import 'package:fluttercalc/operators/Subtract.dart';
 import 'package:fluttercalc/operators/operator.dart';
 
 void main() {
@@ -49,6 +52,8 @@ void _addToDisplay(String num)
 execute(Operator operator)
 {
    stack.add(operator.execuce());
+   stack.removeAt(stack.length -2);
+   stack.removeAt(stack.length -2);
   setState(() {
     stack;
   });
@@ -243,7 +248,7 @@ void _addToStack()
                         width: width,
                         height: height,
                         child: OutlinedButton(
-                          onPressed: () {},
+                          onPressed: () {execute(Subtact(stack));},
                           child: Text(
                             "-",
                             style: TextStyle(fontSize: font),
@@ -300,7 +305,7 @@ void _addToStack()
                         width: width,
                         height: height,
                         child: OutlinedButton(
-                          onPressed: () {},
+                          onPressed: () {execute(Divide(stack));},
                           child: Text(
                             "/",
                             style: TextStyle(fontSize: font),
@@ -330,7 +335,7 @@ void _addToStack()
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText(".");
+                            _addToDisplay(".");
                           },
                           child: Text(
                             ",",
@@ -355,7 +360,7 @@ void _addToStack()
                         width: width,
                         height: height,
                         child: OutlinedButton(
-                          onPressed: () {},
+                          onPressed: () {execute(Multiply(stack));},
                           child: Text(
                             "*",
                             style: TextStyle(fontSize: font),
