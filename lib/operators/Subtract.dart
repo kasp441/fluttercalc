@@ -1,6 +1,6 @@
 import 'package:fluttercalc/operators/operator.dart';
 
-class Subtact implements Operator
+class Subtact extends Operator
 {
    final List<num> stack;
 

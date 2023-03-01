@@ -30,7 +30,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   Display display = Display();
-  
+
   var input = Display().getTextAsText();
   
   List<num> stack = [];
@@ -184,7 +184,8 @@ void _addToStack()
                           width: width,
                           height: height,
                           child: OutlinedButton(
-                            onPressed: () {execute(Add(stack));},
+                            onPressed: () {execute(Add(stack));
+                              },
                             child: Text(
                               "+",
                               style: TextStyle(fontSize: font),

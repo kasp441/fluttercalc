@@ -1,6 +1,6 @@
 import 'package:fluttercalc/operators/operator.dart';
 
-class Divide implements Operator
+class Divide extends Operator
 {
    final List<num> stack;
 
