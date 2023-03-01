@@ -85,7 +85,7 @@ class _MainScreenState extends State<MainScreen> {
 
   void _undobtn() {
     stack.clear();
-    stack.addAll(history.last as Iterable<num>);
+    stack.addAll(history.removeLast() as Iterable<num>);
     setState(() {
       stack;
     });
