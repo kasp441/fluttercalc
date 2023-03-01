@@ -116,18 +116,33 @@ void _addToStack()
                                 child: Text('$stack'),
                               ),
                             ),
-                            Container(
-                              child: SizedBox(
-                                height: 100,
-                                width: 300,
-                                child: OutlinedButton(
-                                  onPressed: () {_addToStack();},
-                                  child: Text(
-                                    "ENTER",
-                                    style: TextStyle(fontSize: 50),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                SizedBox(
+                                  height: 100,
+                                  width: 190,
+                                  child: OutlinedButton(
+                                    onPressed: () {_addToStack();},
+                                    child: Text(
+                                      "ENTER",
+                                      style: TextStyle(fontSize: 40),
+                                    ),
                                   ),
                                 ),
-                              ),
+                                SizedBox(
+                                  height: 100,
+                                  width: 190,
+                                  child: OutlinedButton(
+                                    onPressed: () {_addToStack();},
+                                    child: Text(
+                                      "CLEAR",
+                                      style: TextStyle(fontSize: 40),
+                                    ),
+                                  ),
+                                )
+                              ],
+
                             ),
                           ],
                         ),
