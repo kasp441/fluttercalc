@@ -23,4 +23,8 @@ class Display
   {
     currentText = num + currentText;
   }
+
+  clearDisplay(){
+    currentText = "";
+  }
 }

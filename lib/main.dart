@@ -48,7 +48,7 @@ void _addToDisplay(String num)
 
 execute(Operator operator)
 {
-  operator.execuce();
+   stack.add(operator.execuce());
   setState(() {
     stack;
   });
@@ -56,9 +56,11 @@ execute(Operator operator)
 
 void _addToStack()
 {
+  stack.add(display.getTextAsNum());
+  display.clearDisplay();
   setState(() {
-    stack.add(display.getTextAsNum());
-    input = "";
+    stack;
+    input = display.getTextAsText();
   });
 }
 
