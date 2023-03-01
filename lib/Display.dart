@@ -21,6 +21,6 @@ class Display
 
   addToText(String num)
   {
-    currentText += num;
+    currentText = num + currentText;
   }
 }

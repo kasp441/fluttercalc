@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercalc/Display.dart';
 import 'package:fluttercalc/operators/Add.dart';
+import 'package:fluttercalc/operators/operator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,10 +29,42 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  Display display = Display();
+  
+  var input = Display().getTextAsText();
+  
+  List<num> stack = [];
+
+  List<List> history = [];
+
+
+void _addToDisplay(String num)
+{
+  display.addToText(num);
+  setState(() {
+    input = display.getTextAsText();
+  });
+}
+
+execute(Operator operator)
+{
+  operator.execuce();
+  setState(() {
+    stack;
+  });
+}
+
+void _addToStack()
+{
+  setState(() {
+    stack.add(display.getTextAsNum());
+    input = "";
+  });
+}
+
+
   @override
   Widget build(BuildContext context) {
-    var input = Display().getTextAsText();
-    List<num> stack = [];
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("RPN Calculator")),
@@ -73,7 +106,7 @@ class _MainScreenState extends State<MainScreen> {
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black)),
                                 alignment: Alignment.center,
-                                child: Text(stack.toString()),
+                                child: Text('$stack'),
                               ),
                             ),
                             Container(
@@ -81,7 +114,7 @@ class _MainScreenState extends State<MainScreen> {
                                 height: 100,
                                 width: 300,
                                 child: OutlinedButton(
-                                  onPressed: () {},
+                                  onPressed: () {_addToStack();},
                                   child: Text(
                                     "ENTER",
                                     style: TextStyle(fontSize: 50),
@@ -113,7 +146,7 @@ class _MainScreenState extends State<MainScreen> {
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText("1");
+                            _addToDisplay("1");
                           },
                           child: Text(
                             "1",
@@ -126,7 +159,7 @@ class _MainScreenState extends State<MainScreen> {
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText("2");
+                            _addToDisplay("2");
                           },
                           child: Text(
                             "2",
@@ -139,7 +172,7 @@ class _MainScreenState extends State<MainScreen> {
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText("3");
+                            _addToDisplay("3");
                           },
                           child: Text(
                             "3",
@@ -151,7 +184,7 @@ class _MainScreenState extends State<MainScreen> {
                           width: width,
                           height: height,
                           child: OutlinedButton(
-                            onPressed: () {},
+                            onPressed: () {execute(Add(stack) as Operator);},
                             child: Text(
                               "+",
                               style: TextStyle(fontSize: font),
@@ -169,7 +202,7 @@ class _MainScreenState extends State<MainScreen> {
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText("4");
+                            _addToDisplay("4");
                           },
                           child: Text(
                             "4",
@@ -182,7 +215,7 @@ class _MainScreenState extends State<MainScreen> {
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText("5");
+                            _addToDisplay("5");
                           },
                           child: Text(
                             "5",
@@ -195,7 +228,7 @@ class _MainScreenState extends State<MainScreen> {
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText("6");
+                            _addToDisplay("6");
                           },
                           child: Text(
                             "6",
@@ -226,7 +259,7 @@ class _MainScreenState extends State<MainScreen> {
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText("7");
+                            _addToDisplay("7");
                           },
                           child: Text(
                             "7",
@@ -239,7 +272,7 @@ class _MainScreenState extends State<MainScreen> {
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText("8");
+                            _addToDisplay("8");
                           },
                           child: Text(
                             "8",
@@ -252,7 +285,7 @@ class _MainScreenState extends State<MainScreen> {
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText("9");
+                            _addToDisplay("9");
                           },
                           child: Text(
                             "9",
@@ -307,7 +340,7 @@ class _MainScreenState extends State<MainScreen> {
                         height: height,
                         child: OutlinedButton(
                           onPressed: () {
-                            Display().addToText("0");
+                            _addToDisplay("0");
                           },
                           child: Text(
                             "0",
