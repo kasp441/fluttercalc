@@ -184,7 +184,7 @@ void _addToStack()
                           width: width,
                           height: height,
                           child: OutlinedButton(
-                            onPressed: () {execute(Add(stack) as Operator);},
+                            onPressed: () {execute(Add(stack));},
                             child: Text(
                               "+",
                               style: TextStyle(fontSize: font),
