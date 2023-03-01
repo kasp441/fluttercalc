@@ -49,8 +49,16 @@ void _addToDisplay(String num)
   });
 }
 
+cloneList(Stack)
+{
+  List<num> temp =[];
+  temp.addAll(stack.toList());
+  history.add(temp);
+}
+
 execute(Operator operator)
 {
+  cloneList(Stack);
    stack.add(operator.execuce());
    stack.removeAt(stack.length -2);
    stack.removeAt(stack.length -2);
@@ -61,11 +69,32 @@ execute(Operator operator)
 
 void _addToStack()
 {
+  cloneList(Stack);
   stack.add(display.getTextAsNum());
   display.clearDisplay();
   setState(() {
     stack;
     input = display.getTextAsText();
+  });
+}
+
+void _clearStack()
+{
+  cloneList(Stack);
+  stack.clear();
+  display.clearDisplay();
+  setState(() {
+    input = display.getTextAsText();
+    stack;
+  });
+}
+
+void _undobtn()
+{
+  stack.clear();
+  stack.addAll(history.last as Iterable<num>);
+  setState(() {
+    stack;
   });
 }
 
@@ -134,7 +163,7 @@ void _addToStack()
                                   height: 100,
                                   width: 190,
                                   child: OutlinedButton(
-                                    onPressed: () {_addToStack();},
+                                    onPressed: () {_clearStack();},
                                     child: Text(
                                       "CLEAR",
                                       style: TextStyle(fontSize: 40),
@@ -338,7 +367,7 @@ void _addToStack()
                         width: width,
                         height: height,
                         child: OutlinedButton(
-                          onPressed: () {},
+                          onPressed: () {_undobtn();},
                           child: Text(
                             "UNDO",
                             style: TextStyle(fontSize: 21),
